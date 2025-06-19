@@ -1,3 +1,5 @@
+import crypto from 'crypto';
+
 export const formatDate = (rawDate?: Date) => {
     if (!rawDate) return '';
     const dObj = new Date(rawDate);
@@ -7,3 +9,13 @@ export const formatDate = (rawDate?: Date) => {
 
     return `${yyyy}-${mm}-${dd}`;
 };
+
+export const generateSaltedHash = (pw: string): string => {
+    const pwSalt = process.env.PW_SALT;
+    if(pwSalt === undefined) {
+        throw new Error('PW_SALT is not set');
+    }
+
+    const hashedPassword = crypto.createHmac('sha256', pwSalt).update(pw).digest('hex');
+    return hashedPassword;
+}

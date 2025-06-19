@@ -8,6 +8,6 @@ export async function GET() {
     return NextResponse.json({
         ok: true,
         postList: postList,
-        text: 'Hello World',
+        //text: 'Hello World',
     })
 }

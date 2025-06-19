@@ -156,8 +156,8 @@ const PostMetaRow = styled.div`
 
 const PostContentRow = styled.div`
   min-height: 200px;
-  margin-left: 15px;
   padding: 1.5rem 0;
+  padding-left: 15px;
   border-bottom: 1px dotted #888;
   font-size: 1.1rem;
   color: #222;

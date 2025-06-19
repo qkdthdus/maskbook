@@ -23,7 +23,7 @@ export default function Frame({ children }: FrameProps) {
             <NavItem>프로필</NavItem>
           </NavIsland>
           <LoginButton>
-            <span>Login</span>
+            <SLink href="/sign-up">Sign Up</SLink>
           </LoginButton>
         </TopBar>
         <Main>
@@ -33,6 +33,10 @@ export default function Frame({ children }: FrameProps) {
     );
   }
 
+  const SLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const SpinnerWrapper = styled.div`
   width: 100%;
@@ -72,6 +76,7 @@ const Logo = styled.div`
   z-index: 2;
 `;
 const NavIsland = styled.div`
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   background-color: #92BB8F;
   border-radius: clamp(12px, 1.5vw, 18px);
   width: clamp(300px, 80vw, 900px);
@@ -79,7 +84,6 @@ const NavIsland = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   grid-column: 2;
   transition: all 0.2s ease;
 
@@ -102,6 +106,7 @@ const NavItem = styled.div`
 `;
 
 const LoginButton = styled.div`
+  box-shadow: 0 2px 2px rgba(0, 0, 0,0.2);
   font-size: clamp(1rem, 1vw, 1rem);
   text-align: center;
   color: #333;
@@ -122,6 +127,8 @@ const LoginButton = styled.div`
 `;
 
 const TopBar = styled.div`
+  background-color: white;
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -132,6 +139,7 @@ const TopBar = styled.div`
   align-items: center;
   box-sizing: content-box;
   z-index: 1000;
+  
 `;
 
 const Main = styled.div`
